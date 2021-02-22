@@ -6,11 +6,12 @@ namespace FizzBuzzC_
 {
     class Program
     {
-        public String FizzBuzz(int max)
+        public String FizzBuzz()
             {   
-            //    Console.Write('Enter the maximum integer');
-            //    int max= Console.ReadLine();
-                for (int i=1;i<=max;i++)
+               Console.Write("Enter a maximum number:");
+               string max= Console.ReadLine();
+               int maxnum=int.Parse(max);
+                for (int i=1;i<=maxnum;i++)
                 {List<String> output = new List<string>(){};
                     if (i%13==0)
                     {
@@ -55,7 +56,7 @@ namespace FizzBuzzC_
         {   
             
             Program p = new Program();
-            p.FizzBuzz(255);
+            p.FizzBuzz();
       
         }
     }
