@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace FizzBuzzC_
 {
@@ -8,18 +9,31 @@ namespace FizzBuzzC_
     {
         public String FizzBuzz()
             {   
-               Console.Write("Enter a maximum number:");
-               string max= Console.ReadLine();
-               int maxnum=int.Parse(max);
+                Console.Write("Enter a maximum number:");
+                string max= Console.ReadLine();
+                Console.Write("Apply rule 3 (fizz)? [y/n]");
+                string rulethree= Console.ReadLine();
+                Console.Write("Apply rule 5 (buzz)? [y/n]");
+                string rulefive= Console.ReadLine();
+                Console.Write("Apply rule 7 (bang)? [y/n]");
+                string ruleseven= Console.ReadLine();
+                Console.Write("Apply rule 11 (bong)? [y/n]");
+                string ruleeleven= Console.ReadLine();
+                Console.Write("Apply rule 13 (fezz)? [y/n]");
+                string rulethirteen= Console.ReadLine();
+                Console.Write("Apply rule 17 (reverse)? [y/n]");
+                string ruleseventeen= Console.ReadLine();
+                int maxnum=int.Parse(max);
+
                 for (int i=1;i<=maxnum;i++)
                 {List<String> output = new List<string>(){};
-                    if (i%13==0)
+                    if (i%13==0 && rulethirteen=="y")
                     {
                         output.Add("Fezz");
                     }
-                    if (i%11==0){
+                    if (i%11==0 && ruleeleven=="y"){
                         output.Add("Bong");
-                        if (i%17==0)
+                        if (i%17==0 && ruleseventeen=="y")
                         {
                             output.Reverse();
                         }
@@ -27,22 +41,22 @@ namespace FizzBuzzC_
                         Console.WriteLine(xresult);
                         continue;
                         }
-                    if (i%3==0)
+                    if (i%3==0 && rulethree=="y")
                     {
                         output.Add("Fizz");
                     }
-                    if (i%5==0)
+                    if (i%5==0 && rulefive=="y")
                     {
                         output.Add("Buzz");
                     }
-                    if (i%7==0)
+                    if (i%7==0 && ruleseven=="y")
                     {
                         output.Add("Bang");
                     }
-                    if (i%17==0){
+                    if (i%17==0 && ruleseventeen=="y"){
                         output.Reverse();
                     }
-                    if (i%11!=0 && i%3!=0 && i%5!=0 && i%7!=0&& i%13!=0) 
+                    if (!output.Any())
                     {
                     output.Add(Convert.ToString(i));
                     }
